@@ -15,6 +15,13 @@ class CreateItemsTable extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->integer('type_id')->unsigned()->index()->nullable();
+            $table->foreign('type_id')->references('id')->on('types');
+            $table->integer('place_id')->unsigned()->index()->nullable();
+            $table->foreign('place_id')->references('id')->on('places');
+            $table->integer('group_id')->unsigned()->index()->nullable();
+            $table->foreign('group_id')->references('id')->on('groups');
             $table->timestamps();
         });
     }
