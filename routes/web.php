@@ -18,3 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::name('modes')->get('/modes', 'ModesController@index');
+Route::name('modes.create')->get('/modes/create', 'ModesController@create');
+Route::name('modes.store')->post('/modes/store', 'ModesController@store');
+Route::name('modes.show')->get('/modes/{id}', 'ModesController@show');
+Route::name('modes.edit')->get('/modes/{id}/edit', 'ModesController@edit');
+Route::name('modes.update')->put('/modes/{id}', 'ModesController@update');
+Route::name('modes.delete')->delete('/modes/{id}', 'ModesController@destroy');
