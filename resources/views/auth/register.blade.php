@@ -48,20 +48,6 @@
                         </div>
                     </div>
 
-                    <div class="uk-margin{{ $errors->has('email') ? ' uk-form-danger' : '' }}">
-                        <label for="password-confirm" class="uk-form-label">Confirm Password</label>
-                        <div>
-                            <input id="password-confirm" type="password-confirm" class="uk-input" 
-                                name="password-confirm" value="{{ old('password-confirm') }}" required autofocus>
-
-                            @if ($errors->has('email'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('password-confirm') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                    </div>
-
                     <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
                         <div class="">
                             <div class="checkbox">
