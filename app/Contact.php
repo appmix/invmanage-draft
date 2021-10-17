@@ -4,18 +4,16 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Type extends Model
+class Contact extends Model
 {
+    protected $table = 'contact';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'user_id'
+        'name', 'email', 'message'
     ];
 
-    public function items() {
-        return $this->hasMany(Item::class);
-    }
 }

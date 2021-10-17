@@ -26,4 +26,30 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function items() {
+        return $this->hasMany(Item::class);
+    }
+
+    public function types() {
+        return $this->hasMany(Type::class);
+    }
+
+    public function groups() {
+        return $this->hasMany(Group::class);
+    }
+
+    public function places() {
+        return $this->hasMany(Place::class);
+    }
+
+    public function locations() {
+        return $this->hasMany(Location::class);
+    }
+
+    public function modes() {
+        return $this->hasMany(Mode::class);
+    }
+
+
 }

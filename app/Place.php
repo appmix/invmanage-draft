@@ -12,7 +12,7 @@ class Place extends Model
      * @var array
      */
     protected $fillable = [
-        'name'
+        'name', 'location_id', 'user_id'
     ];
 
     public function location()

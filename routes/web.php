@@ -19,8 +19,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// Getting all routes set up
 foreach(['items', 'types', 'groups', 'places', 'locations', 'modes'] as $name) {
     Route::name($name)->get('/'.$name, ucfirst($name).'Controller@index');
+    if ($name == 'items')
+        Route::name($name.'.search')->get('/'.$name.'/search', ucfirst($name).'Controller@search');
     Route::name($name.'.create')->get('/'.$name.'/create', ucfirst($name).'Controller@create');
     Route::name($name.'.store')->post('/'.$name.'/store', ucfirst($name).'Controller@store');
     Route::name($name.'.show')->get('/'.$name.'/{id}', ucfirst($name).'Controller@show');
